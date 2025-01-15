@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome to the Lemonade Stand</h1>
+
+<h2>Menu</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Lemonade</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in menu_items %}
+        <tr>
+            <td>{{ item.name|escape }}</td>
+            <td>{{ item.description|escape }}</td>
+            <td>${{ item.price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% if user.is_authenticated %}
+    <p>Welcome back, {{ user.username }}! Use the navigation bar to explore features.</p>
+{% else %}
+    <p>Please <a href="{% url 'login' %}">login</a> to access more features.</p>
+{% endif %}
+{% endblock %}

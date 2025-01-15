@@ -1,0 +1,7 @@
+<h1>Record a Sale</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Record</button>
+</form>
+
