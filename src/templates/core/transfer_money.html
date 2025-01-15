@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Transfer Money</h2>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Transfer to Bank</button>
+</form>
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

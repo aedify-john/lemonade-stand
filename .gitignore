@@ -1,0 +1,9 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+pyvenv.cfg
+db.sqlite3
+__pycache__
+src/static/
+staticfiles/
+bin/
+lib/
+src/migrations/
