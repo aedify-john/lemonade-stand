@@ -30,6 +30,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='core/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='home'), name='logout'),
     path('view-sales/', backend_views.view_sales, name='view_sales'),
+    path('view-all-sales/', backend_views.view_all_sales, name='view_all_sales'),  # Entry for viewing all sales
     path('transfer-money/', backend_views.transfer_money, name='transfer_money')
 ]
 
